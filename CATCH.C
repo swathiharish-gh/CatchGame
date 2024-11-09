@@ -281,11 +281,6 @@ void spawnObject() {
     // Randomly decide the type of object, ensuring 20% chance of being a bomb (1)
     currentObjectType = (rand() % 5 == 0) ? 1 : 0;  // 20% chance of bomb, 80% for catch
 
-    // Optional: Keep track of the last object type and ensure no immediate repetitions
-    
-    while (currentObjectType == lastObjectType) {
-        currentObjectType = (rand() % 5 == 0) ? 1 : 0;  // Re-randomize if same as last
-    }
     lastObjectType = currentObjectType; // Update last object type
     updateSpeed();  // Set speed for the new object
 }
