@@ -43,10 +43,6 @@ void showRules();
 
 
 
-
-
-
-
 // Main function
 int main() {
     setGraphics();  // Initialize graphics
@@ -56,6 +52,7 @@ int main() {
     return 0;
 }
 
+
 // Function to initialize graphics
 void setGraphics() {
     int gd = DETECT, gm;
@@ -63,6 +60,7 @@ void setGraphics() {
     x = getmaxx(); // Get maximum width
     y = getmaxy(); // Get maximum height
 }
+
 
 // Loading screen
 void loadingScreen() {
@@ -93,7 +91,6 @@ void displayMenu() {
     cleardevice(); 
     settextstyle(3, 0, 3);
     
-   
     while (1) {
         cleardevice();
         score = 0; // Initial score
@@ -155,7 +152,7 @@ void displayMenu() {
     }
 }
 
-//----------------------------------------------------
+
 // Function to start the game
 void startGame() {
     x = getmaxx();  // Get screen width
@@ -239,7 +236,6 @@ void startGame() {
 }
 
 
-
 // Function to draw game elements
 void drawGame() {
     cleardevice();
@@ -292,6 +288,7 @@ int checkCollision() {
             objectPosX + objectSize > basketPos && objectPosX < basketPos + basketWidth);
 }
 
+
 // Function to update object speed based on score
 void updateSpeed() {
     objectSpeed = 8 + (score * speedIncrement);  // Start from speed of 8
@@ -321,6 +318,7 @@ void pauseGame() {
     }
 }
 
+
 // Function to handle key press for menu or resume
 void handlePauseInput(char key) {
     if (isPaused) {
@@ -332,6 +330,7 @@ void handlePauseInput(char key) {
         }
     }
 }
+
 
 // Function to display game over screen
 void gameOverScreen() {
@@ -348,9 +347,6 @@ void gameOverScreen() {
     exit(0);
 }
 
-//--------------------------------------------------------
-
-
 
 void displayControls() {
     cleardevice();
@@ -363,6 +359,7 @@ void displayControls() {
     outtextxy(x / 2 - 150, 380, "Press any key to return.");
     getch();
 }
+
 
 void showCredits() {
     cleardevice();
@@ -390,7 +387,6 @@ void showRules() {
     cleardevice();  // Clear the screen
     settextstyle(3, 0, 1);  // Set text style
 
-   
     // Display rules
     outtextxy(offsetX, 80, "Rules:");
     outtextxy(offsetX, 130, "1. Catch the green box (catch) and leave the red box (bomb).");
